@@ -3,6 +3,7 @@ package org.example.Bot;
 import org.example.APIWork.APIObject;
 import org.example.BotLogic.CoreModule;
 import org.example.BotLogic.StateParser;
+import org.example.BotLogic.TextBasedRPG;
 import org.example.Structures.Module;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class MainBotLogic {
         ClientsStates = new HashMap<Long,Integer>();
         SomeModule[0] = new CoreModule();
         SomeModule[1] = new StateParser();
+        SomeModule[2] = new TextBasedRPG();
     }
 
     public void Think(long Who, String What){
@@ -40,6 +42,9 @@ public class MainBotLogic {
     private void RecogniseComand(long Who, String str){
         if(str.contains("/article")){
             ClientsStates.put(Who,1);
+        }
+        else if (str.contains("/game")){
+            ClientsStates.put(Who,2);
         }
         else if (str.contains("/")){
             ClientsStates.put(Who,0);
