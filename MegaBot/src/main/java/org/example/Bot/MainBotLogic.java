@@ -2,6 +2,7 @@ package org.example.Bot;
 
 import org.example.APIWork.APIObject;
 import org.example.BotLogic.CoreModule;
+import org.example.BotLogic.CurrencyParser;
 import org.example.BotLogic.StateParser;
 import org.example.BotLogic.TextBasedRPG;
 import org.example.Structures.Module;
@@ -23,6 +24,7 @@ public class MainBotLogic {
         SomeModule[0] = new CoreModule();
         SomeModule[1] = new StateParser();
         SomeModule[2] = new TextBasedRPG();
+        SomeModule[3] = new CurrencyParser();
     }
 
     public void Think(long Who, String What){
@@ -45,6 +47,9 @@ public class MainBotLogic {
         }
         else if (str.contains("/game")){
             ClientsStates.put(Who,2);
+        }
+        else if (str.contains("/currency")){
+            ClientsStates.put(Who,3);
         }
         else if (str.contains("/")){
             ClientsStates.put(Who,0);
