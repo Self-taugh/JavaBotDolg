@@ -9,7 +9,7 @@ public class CoreModule implements Module {
     }
 
     @Override
-    public void Input(String input) {
+    public void Input(String input, Long Who) {
 
     }
 }

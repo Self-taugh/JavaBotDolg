@@ -74,7 +74,7 @@ public class StateParser implements Module {
     }
 
     @Override
-    public void Input(String inp) {
+    public void Input(String inp, Long Who) {
         if (inp.equals("/article")){
             int i = rand.nextInt(1,362);
             System.out.println("Поиск статьи: ");

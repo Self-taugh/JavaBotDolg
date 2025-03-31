@@ -22,7 +22,7 @@ public class TextBasedRPG implements Module {
     }
 
     @Override
-    public void Input(String input) {
+    public void Input(String input, Long Who) {
         if (Stage == 0){
             bufer = "Welcome to the Text-Based RPG!\nEnter your command:";
             Stage = 1;

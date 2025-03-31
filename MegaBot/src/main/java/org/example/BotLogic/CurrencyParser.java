@@ -16,7 +16,7 @@ public class CurrencyParser implements Module {
     }
 
     @Override
-    public void Input(String inp) {
+    public void Input(String inp, Long who) {
         if (inp.startsWith("/currency")) {
             String currencyCode = inp.substring(9).trim().toUpperCase();
             buffer = getCurrencyRate(currencyCode);
